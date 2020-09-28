@@ -1,0 +1,24 @@
+﻿.content{
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+.logo {
+    font-size:larger;
+    text-decoration:none;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+.logo:hover{
+    color: #00ff21;
+}
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h2{
+    color: white;
+            font-size: 50px;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+}

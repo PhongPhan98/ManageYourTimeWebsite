@@ -1,0 +1,71 @@
+﻿@{
+    Layout = "~/Views/Layout/_LayoutAboutMe.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>About Me</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/css/aboutme.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="logo">
+        <a href="/Home/HomePage">Quay lại trang chủ</a>
+    </div>
+    <div class="profile-card">
+        <div class="image-container">
+            <img src="~/Upload/images/myimage.jpg"   style="width: 100%"/>
+        </div>
+        <div class="title">
+            <h2>Phong PX</h2>
+        </div>
+
+        <div class="main-container">
+            <p><i class="fa fa-briefcase info"></i>Student</p>
+            <p><i class="fa fa-home info"></i>HCM,VietNam</p>
+            <p> <i class="fa fa-envelope info"></i>phongpx9x@gmail.com</p>
+            <p><i class="fa fa-phone info"></i>+84 388 948 838 </p>
+            <hr />
+            <p><b><i class="fa fa-asterisk info"></i> SKILLS</b></p>
+            <p>ASP.NET</p>
+            <div class="skill-bar">
+                <div class="progress-bar" style="width: 70%"> 70%</div>
+            </div>
+
+            <p>HTML, CSS</p>
+            <div class="skill-bar">
+                <div class="progress-bar" style="width: 75%"> 75%</div>
+            </div>
+
+            <p>JAVA</p>
+            <div class="skill-bar">
+                <div class="progress-bar" style="width: 65%"> 65%</div>
+            </div>
+
+            <p>ENGLISH</p>
+            <div class="skill-bar">
+                <div class="progress-bar" style="width: 65%"> 65%</div>
+            </div>
+
+        </div>
+    </div>
+
+
+    @*Animation Bubles*@
+    <div class="wrapper">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>
