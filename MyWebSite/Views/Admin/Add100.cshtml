@@ -1,0 +1,80 @@
+﻿@model MyWebSite.Models.C100Things
+
+@{
+    ViewBag.Title = "Adding 100 things";
+    Layout = "~/Views/Layout/_LayoutAminPage.cshtml";
+}
+
+<style>
+    .content {
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        margin-top: 70px;
+    }
+</style>
+@using (Html.BeginForm("Add100", "Admin", FormMethod.Post))
+{
+    <h1>Quản lý 100 điều phải làm</h1>
+    <section class="content">
+        <div>
+            <p id="notvalid" runat="server" visible="false" class="text-error" style="color:red">
+                @ViewBag.Error
+            </p>
+            <div class="form-group">
+                @Html.EditorFor(model => model.Con, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập mục tiêu", @style = "height: 50px; " } })
+            </div>  
+            <div class="form-group">
+                @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập trạng thái", @style = "height: 50px;" } })
+            </div>
+            <div class="form-group">
+                <button type="button" style="height:50px; font-size:large" class="btn btn-primary" onclick="Add();">Thêm</button>
+            </div>
+        </div>
+    </section>
+}
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<style>
+    .swal2-popup {
+        display: none;
+        position: relative;
+        box-sizing: border-box;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        max-width: 100%;
+        padding: 1.25em;
+        border: none;
+        border-radius: .3125em;
+        background: #fff;
+        font-family: arial, inherit;
+        font-size: 14px;
+    }
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript"></script>
+
+@if (Model != null)
+{
+    <script type="text/javascript">
+            $(function () {
+                Swal.fire({
+                    title: 'Thêm thành công',
+                    icon: 'success',
+                });
+                $("#Con").val("");
+                $("#Status").val("");
+                error.innerHTML = "";
+            });
+    </script>
+}
+
+<script>
+    function Add() {
+            $('#Action').val('Add100');
+            $("form").submit();
+    }
+
+</script>
+

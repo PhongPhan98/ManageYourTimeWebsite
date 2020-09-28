@@ -137,6 +137,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\aboutme.css" />
     <Content Include="Content\css\homepage.css" />
+    <Content Include="Content\css\layoutadminpage.css" />
     <Content Include="Content\css\list100.css" />
     <Content Include="Content\css\mainlayout.css" />
     <Content Include="Content\css\register.css" />
@@ -284,10 +285,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\USerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C100Things.cs">
+      <DependentUpon>MyDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MyDB.Context.cs">
       <AutoGen>True</AutoGen>
@@ -333,6 +338,9 @@
     <Content Include="Views\Home\My100.cshtml" />
     <Content Include="Views\Home\AboutMe.cshtml" />
     <Content Include="Views\Layout\_LayoutAboutMe.cshtml" />
+    <Content Include="Views\Admin\AdminPage.cshtml" />
+    <Content Include="Views\Layout\_LayoutAminPage.cshtml" />
+    <Content Include="Views\Admin\Add100.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

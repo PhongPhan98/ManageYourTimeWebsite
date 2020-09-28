@@ -35,17 +35,25 @@ namespace MyWebSite.Controllers
         public ActionResult Login(Reg model)
         {
             var resutl = db.Regs.Any(e => e.UserName == model.UserName && e.PassWord == model.PassWord);
-            if (resutl)
+            if (resutl && model.UserName == "phongpx")
             {
+                return RedirectToAction("AdminPage", "Admin");
+            }
+          else if (resutl)
+            {
+                Session["User"] = model.UserName;
                 return RedirectToAction("HomePage", "home");
             }
             else
             {
+                
                 ViewBag.error = "Đăng nhập không thành công";
                 return View(model);
             }
 
         }
+
+ 
 
     }
 }
