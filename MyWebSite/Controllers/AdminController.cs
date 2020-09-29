@@ -14,6 +14,7 @@ namespace MyWebSite.Controllers
         MyDBEntities2 db = new MyDBEntities2();
         public ActionResult AdminPage()
         {
+            Session["UserName"] = @Session["User"];
             return View();
         }
 
@@ -45,8 +46,6 @@ namespace MyWebSite.Controllers
                 ViewBag.errorr = "Thêm mới dữ liệu thất bại";
                 return View();
             }
-            
-
         }
     }
 }

@@ -286,6 +286,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\USerController.cs" />
     <Compile Include="Global.asax.cs">
@@ -341,6 +342,7 @@
     <Content Include="Views\Admin\AdminPage.cshtml" />
     <Content Include="Views\Layout\_LayoutAminPage.cshtml" />
     <Content Include="Views\Admin\Add100.cshtml" />
+    <Content Include="Views\App\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

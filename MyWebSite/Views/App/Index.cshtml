@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <style>
+        .swal2-popup {
+            display: none;
+            position: relative;
+            box-sizing: border-box;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%;
+            max-width: 100%;
+            padding: 1.25em;
+            border: none;
+            border-radius: .3125em;
+            background: #fff;
+            font-family: arial, inherit;
+            font-size: 14px;
+        }
+    </style>
+    <div style="display:none">
+        <div id="alert">
+            <h2>Đây là một website vì cộng đồng </h2>
+            <p>Mục đích của chúng tôi là đưa ra những giải pháp hỗ trợ kịp thời cho trẻ em Việt Nam</p>
+            <p>Những trường hợp mà chúng tôi có thể hỗ trợ như</p>
+                <p style="color: red; font-weight:bold">Trẻ em bị xâm hại thể xác và tinh thần</p>
+                <p style="color: red; font-weight:bold">Trẻ em bị bắt cóc</p>
+                <p style="color: red; font-weight:bold">Trẻ gặp khó khăn trong giao tiếp hoặc tự kỉ</p>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript"></script>
+    <script>
+        var content = $("#alert").html();
+                Swal.fire({
+                    title: 'Vì trẻ em',
+                    html: content,
+                    icon: 'warning'
+                });
+    </script>
+</body>
+</html>
+
