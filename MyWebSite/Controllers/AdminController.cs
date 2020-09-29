@@ -27,6 +27,15 @@ namespace MyWebSite.Controllers
         {
             try
             {
+                if (model.Status.StartsWith("Chưa") || model.Status.StartsWith("chưa"))
+                {
+                    model.Status = "1";
+                    model.Con = model.Con;
+                }
+                else {
+                    model.Status = "2";
+                    model.Con = model.Con;
+                }
                 db.C100Things.Add(model);
                 db.SaveChanges();
                 return View(model);

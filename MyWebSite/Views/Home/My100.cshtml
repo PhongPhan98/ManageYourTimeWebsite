@@ -1,4 +1,5 @@
-﻿
+﻿@model List<MyWebSite.Models.C100Things>
+
 @{
     Layout = "~/Views/Layout/_MainLayout.cshtml";
 }
@@ -19,18 +20,22 @@
     <div class="content " style="padding-top: 50px" > 
         <h2 style="font-weight: bold ; font-family:'YELLOWTAIL', Tahoma, Geneva, Verdana, sans-serif ">100 THINGS I WANT TO DO </h2>
         <ul class="list-group" style="padding-top: 30px; font-family:'YELLOWTAIL'">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-           Finish a website, whatever !
-              <input type="checkbox" checked="checked">
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Go abroad
-              <input type="checkbox">
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center input-group">
-             ....
-              <input type="checkbox">
-          </li>
+            @foreach (var  item in Model)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                   @item.Con
+                    @if (item.Status == "1")
+                    {
+                        <input type="checkbox">
+                    }
+                    else
+                    {
+                        <input type="checkbox" checked="checked">
+                    }
+
+                </li>
+            }    
+
         </ul>
     </div>
 </body>
