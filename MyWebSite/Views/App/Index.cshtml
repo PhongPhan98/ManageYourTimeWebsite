@@ -1,4 +1,4 @@
-﻿
+﻿@model List<MyWebSite.Models.ToChucHoTro>
 @{
     Layout = null;
 }
@@ -91,16 +91,22 @@
                     <div class="title">Thông tin tổ chức bảo trợ</div>
                     <div class="field">
                         <div class="label">Tên tổ chức muốn trình báo</div>
-                        <input type="text">
+                        <select>
+                            @foreach (var item in Model)
+                            {
+                                <option>@item.TenToChuc</option>
+                            }      
+                        </select>
                     </div>
                     <div class="field">
                         <div class="label">Thông tin cung cấp thêm</div>
                         <input type="text">
                     </div>
-                    
+
+
                     <div class="field btns">
                         <button class="prev-2 prev">Quay lại</button>
-                        <button class="next-2 next submit">Kết thúc</button>
+                        <button class="next-2 next submit">Tiếp tục</button>
                     </div>
                 </div>
 
@@ -108,14 +114,12 @@
                     <div class="thanks">
                         <h2>CẢM ƠN ĐÃ THÔNG BÁO CHO CHÚNG TÔI!</h2>
                         <p>CHÚNG TÔI SẼ NHANH CHÓNG XÁC MINH VÀ GỬI THÔNG TIN ĐẾN BẠN NHANH NHẤT</p>
-                    </div>
+                        <button class="submit btn btn-primary">Thoát</button>
+                     </div>
                 </div>
             </form>
         </div>
     </div>
-
-
-
 
     <style>
         .swal2-popup {
@@ -154,6 +158,7 @@
                     html: content,
                     icon: 'warning'
                 });
+       
     </script>
     <script src="~/Content/js/app.js"></script>
 
