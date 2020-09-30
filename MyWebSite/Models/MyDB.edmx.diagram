@@ -7,6 +7,7 @@
       <Diagram DiagramId="2ca5a735ad584a55843ae377b7bbd68e" Name="Diagram1" ZoomLevel="78">
         <EntityTypeShape EntityType="MyDBModel.Reg" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MyDBModel.C100Things" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MyDBModel.ToChucHoTro" Width="1.5" PointX="5.75" PointY="1.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

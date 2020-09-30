@@ -284,6 +284,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\NoDirectAccessAttribute.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AppController.cs" />
@@ -311,6 +312,9 @@
       <DependentUpon>MyDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Reg.cs">
+      <DependentUpon>MyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ToChucHoTro.cs">
       <DependentUpon>MyDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -343,6 +347,7 @@
     <Content Include="Views\Layout\_LayoutAminPage.cshtml" />
     <Content Include="Views\Admin\Add100.cshtml" />
     <Content Include="Views\App\Index.cshtml" />
+    <Content Include="Views\Admin\ThemDiaChiBaoTro.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

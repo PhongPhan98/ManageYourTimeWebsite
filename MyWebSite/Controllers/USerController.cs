@@ -31,6 +31,7 @@ namespace MyWebSite.Controllers
         {
             return View();
         }
+
        [HttpPost]
         public ActionResult Login(Reg model)
         {

@@ -9,6 +9,8 @@ namespace MyWebSite.Controllers
     public class AppController : Controller
     {
         // GET: App
+
+        [NoDirectAccess]
         public ActionResult Index()
         {
             return View();

@@ -12,17 +12,19 @@ namespace MyWebSite.Controllers
     {
         // GET: Admin
         MyDBEntities2 db = new MyDBEntities2();
+        [NoDirectAccess]
         public ActionResult AdminPage()
         {
-            Session["UserName"] = @Session["User"];
             return View();
         }
 
+        [NoDirectAccess]
         public ActionResult Add100()
         {
             return View();
         }
 
+        [NoDirectAccess]
         [HttpPost]
         public ActionResult Add100(C100Things model)
         {
@@ -47,5 +49,31 @@ namespace MyWebSite.Controllers
                 return View();
             }
         }
+
+        [NoDirectAccess]
+        public ActionResult ThemDiaChiBaoTro()
+        {
+            return View();
+        }
+
+        [NoDirectAccess]
+        [HttpPost]
+        public ActionResult ThemDiaChiBaoTro(ToChucHoTro model)
+        {
+            try
+            {
+                db.ToChucHoTroes.Add(model);
+                db.SaveChanges();
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.error = "Thêm tổ chức thất bại";
+                return View();
+            }
+            
+        }
+
+
     }
 }

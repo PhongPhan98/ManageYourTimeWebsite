@@ -27,5 +27,6 @@ namespace MyWebSite.Models
     
         public virtual DbSet<Reg> Regs { get; set; }
         public virtual DbSet<C100Things> C100Things { get; set; }
+        public virtual DbSet<ToChucHoTro> ToChucHoTroes { get; set; }
     }
 }

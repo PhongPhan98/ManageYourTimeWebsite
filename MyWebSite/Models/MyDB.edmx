@@ -22,9 +22,20 @@
           <Property Name="PassWord" Type="nvarchar" MaxLength="50" />
           <Property Name="RePassWord" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="ToChucHoTro">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenToChuc" Type="nvarchar" MaxLength="500" />
+          <Property Name="SoDienThoai" Type="nvarchar" MaxLength="500" />
+          <Property Name="Email" Type="nvarchar" MaxLength="500" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="500" />
+        </EntityType>
         <EntityContainer Name="MyDBModelStoreContainer">
           <EntitySet Name="100Things" EntityType="Self.100Things" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reg" EntityType="Self.Reg" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ToChucHoTro" EntityType="Self.ToChucHoTro" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -42,6 +53,7 @@
         <EntityContainer Name="MyDBEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Regs" EntityType="Self.Reg" />
           <EntitySet Name="C100Things" EntityType="MyDBModel.C100Things" />
+          <EntitySet Name="ToChucHoTroes" EntityType="MyDBModel.ToChucHoTro" />
         </EntityContainer>
         <EntityType Name="C100Things">
           <Key>
@@ -50,6 +62,16 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Con" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ToChucHoTro">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenToChuc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SoDienThoai" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -72,6 +94,17 @@
               <MappingFragment StoreEntitySet="100Things">
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Con" ColumnName="Con" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ToChucHoTroes">
+            <EntityTypeMapping TypeName="MyDBModel.ToChucHoTro">
+              <MappingFragment StoreEntitySet="ToChucHoTro">
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="TenToChuc" ColumnName="TenToChuc" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
