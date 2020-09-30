@@ -136,6 +136,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\aboutme.css" />
+    <Content Include="Content\css\app.css" />
     <Content Include="Content\css\homepage.css" />
     <Content Include="Content\css\layoutadminpage.css" />
     <Content Include="Content\css\list100.css" />
@@ -143,6 +144,7 @@
     <Content Include="Content\css\register.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\js\app.js" />
     <Content Include="Content\js\homepage.js" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
@@ -277,6 +279,7 @@
     <Content Include="scripts\umd\popper.js" />
     <Content Include="scripts\umd\popper.min.js" />
     <Content Include="Upload\images\background.jpg" />
+    <Content Include="Upload\images\bg.png" />
     <Content Include="Upload\images\my100.png" />
     <Content Include="Upload\images\myimage.jpg" />
     <Content Include="Upload\images\skybg.jpg" />
