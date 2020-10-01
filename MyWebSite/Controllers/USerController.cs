@@ -43,7 +43,7 @@ namespace MyWebSite.Controllers
           else if (resutl)
             {
                 Session["User"] = model.UserName;
-                return RedirectToAction("Index", "App");
+                return RedirectToAction("AppHomePage", "App");
             }
             else
             {

@@ -296,6 +296,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\appModel.cs" />
     <Compile Include="Models\C100Things.cs">
       <DependentUpon>MyDB.tt</DependentUpon>
     </Compile>
@@ -315,6 +316,9 @@
       <DependentUpon>MyDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Reg.cs">
+      <DependentUpon>MyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ThongTinKhaiBao.cs">
       <DependentUpon>MyDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ToChucHoTro.cs">
@@ -349,7 +353,7 @@
     <Content Include="Views\Admin\AdminPage.cshtml" />
     <Content Include="Views\Layout\_LayoutAminPage.cshtml" />
     <Content Include="Views\Admin\Add100.cshtml" />
-    <Content Include="Views\App\Index.cshtml" />
+    <Content Include="Views\App\AppHomePage.cshtml" />
     <Content Include="Views\Admin\ThemDiaChiBaoTro.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

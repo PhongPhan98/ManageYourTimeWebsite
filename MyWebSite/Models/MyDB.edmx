@@ -22,6 +22,23 @@
           <Property Name="PassWord" Type="nvarchar" MaxLength="50" />
           <Property Name="RePassWord" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="ThongTinKhaiBao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HoTenNguoiKhaiBao" Type="nvarchar" MaxLength="500" />
+          <Property Name="DiaChiNguoiKhaiBao" Type="nvarchar" MaxLength="500" />
+          <Property Name="NoiDungKhaiBao" Type="nvarchar" MaxLength="500" />
+          <Property Name="HoTenTre" Type="nvarchar" MaxLength="500" />
+          <Property Name="DiaChiTre" Type="nvarchar" MaxLength="500" />
+          <Property Name="GioiTinh" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tuoi" Type="int" />
+          <Property Name="ToChucTrinhBao" Type="nvarchar" MaxLength="500" />
+          <Property Name="ThongTinThem" Type="nvarchar" MaxLength="500" />
+          <Property Name="TrangThai" Type="nvarchar" MaxLength="500" />
+          <Property Name="SoDienThoai" Type="nvarchar" MaxLength="500" />
+        </EntityType>
         <EntityType Name="ToChucHoTro">
           <Key>
             <PropertyRef Name="Id" />
@@ -35,6 +52,7 @@
         <EntityContainer Name="MyDBModelStoreContainer">
           <EntitySet Name="100Things" EntityType="Self.100Things" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reg" EntityType="Self.Reg" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThongTinKhaiBao" EntityType="Self.ThongTinKhaiBao" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ToChucHoTro" EntityType="Self.ToChucHoTro" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -54,6 +72,7 @@
           <EntitySet Name="Regs" EntityType="Self.Reg" />
           <EntitySet Name="C100Things" EntityType="MyDBModel.C100Things" />
           <EntitySet Name="ToChucHoTroes" EntityType="MyDBModel.ToChucHoTro" />
+          <EntitySet Name="ThongTinKhaiBaos" EntityType="MyDBModel.ThongTinKhaiBao" />
         </EntityContainer>
         <EntityType Name="C100Things">
           <Key>
@@ -72,6 +91,23 @@
           <Property Name="SoDienThoai" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="DiaChi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ThongTinKhaiBao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HoTenNguoiKhaiBao" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChiNguoiKhaiBao" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDungKhaiBao" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HoTenTre" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChiTre" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GioiTinh" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tuoi" Type="Int32" />
+          <Property Name="ToChucTrinhBao" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ThongTinThem" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TrangThai" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SoDienThoai" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -105,6 +141,24 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
                 <ScalarProperty Name="TenToChuc" ColumnName="TenToChuc" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThongTinKhaiBaos">
+            <EntityTypeMapping TypeName="MyDBModel.ThongTinKhaiBao">
+              <MappingFragment StoreEntitySet="ThongTinKhaiBao">
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="ThongTinThem" ColumnName="ThongTinThem" />
+                <ScalarProperty Name="ToChucTrinhBao" ColumnName="ToChucTrinhBao" />
+                <ScalarProperty Name="Tuoi" ColumnName="Tuoi" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="DiaChiTre" ColumnName="DiaChiTre" />
+                <ScalarProperty Name="HoTenTre" ColumnName="HoTenTre" />
+                <ScalarProperty Name="NoiDungKhaiBao" ColumnName="NoiDungKhaiBao" />
+                <ScalarProperty Name="DiaChiNguoiKhaiBao" ColumnName="DiaChiNguoiKhaiBao" />
+                <ScalarProperty Name="HoTenNguoiKhaiBao" ColumnName="HoTenNguoiKhaiBao" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

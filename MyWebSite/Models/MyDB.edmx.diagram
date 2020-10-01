@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="MyDBModel.Reg" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MyDBModel.C100Things" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="MyDBModel.ToChucHoTro" Width="1.5" PointX="5.75" PointY="1.375" />
+        <EntityTypeShape EntityType="MyDBModel.ThongTinKhaiBao" Width="1.5" PointX="8" PointY="1.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
