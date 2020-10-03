@@ -353,8 +353,8 @@
     <Content Include="Views\Admin\AdminPage.cshtml" />
     <Content Include="Views\Layout\_LayoutAminPage.cshtml" />
     <Content Include="Views\Admin\Add100.cshtml" />
-    <Content Include="Views\App\AppHomePage.cshtml" />
     <Content Include="Views\Admin\ThemDiaChiBaoTro.cshtml" />
+    <Content Include="Views\App\AppHomePage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

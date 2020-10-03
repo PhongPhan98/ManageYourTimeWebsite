@@ -15,45 +15,66 @@ namespace MyWebSite.Controllers
         [NoDirectAccess]
         public ActionResult AppHomePage()
         {
-            try
-            {
-                appModel model = new appModel();
-                model.tochuchotro = db.ToChucHoTroes.ToList();
-                model.thongtinkhaibao = null;
 
-                 ViewBag.tochuc = db.ToChucHoTroes.Select(c => new SelectListItem
+            if (ModelState != null)
+            {
+                try
                 {
-                    Value = c.TenToChuc.ToString(),
-                    Text = c.TenToChuc
-                });
 
+                    appModel model = new appModel();
+                    model.tochuchotro = db.ToChucHoTroes.ToList();
+                    model.thongtinkhaibao = null;
+                    IEnumerable<SelectListItem> tochuc = db.ToChucHoTroes.Select(
+                                b => new SelectListItem { Value = b.TenToChuc, Text = b.TenToChuc });
+                    ViewData["ToChuc"] = tochuc;
+                    return View(model);
 
+                }
+                catch (Exception ex)
+                {
 
-                return View(model);
+                    return View();
+                }
             }
-            catch (Exception ex)
-            {
-                
+            else {      
                 return View();
             }
+            
         }
 
         [HttpPost]
         public ActionResult AppHomePage(appModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                db.ThongTinKhaiBaos.Add(model.thongtinkhaibao);
-                db.SaveChanges();
-                ModelState.Clear();
+                try
+                {
+                    db.ThongTinKhaiBaos.Add(model.thongtinkhaibao);
+                    db.SaveChanges();
+                    ModelState.Clear();
+                    IEnumerable<SelectListItem> tochuc = db.ToChucHoTroes.Select(
+                                b => new SelectListItem { Value = b.TenToChuc, Text = b.TenToChuc });
+                    ViewData["ToChuc"] = tochuc;
+                    return View(model);
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.error = "Lỗi hệ thống, vui lòng liên hệ quản trị";
+                    IEnumerable<SelectListItem> tochuc = db.ToChucHoTroes.Select(
+                                b => new SelectListItem { Value = b.TenToChuc, Text = b.TenToChuc });
+                    ViewData["ToChuc"] = tochuc;
+                    return View(model);
+                }
+            }
+            else
+            {
+                IEnumerable<SelectListItem> tochuc = db.ToChucHoTroes.Select(
+                                b => new SelectListItem { Value = b.TenToChuc, Text = b.TenToChuc });
+                ViewData["ToChuc"] = tochuc;
                 return View(model);
             }
-            catch (Exception ex)
-            {
-                ViewBag.error = "Lỗi hệ thống, vui lòng liên hệ quản trị";
-                ModelState.Clear();
-                return View();
-            }
+
+             
         }
     }
 }

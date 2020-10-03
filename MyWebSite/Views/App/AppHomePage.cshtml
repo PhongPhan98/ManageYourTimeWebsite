@@ -49,12 +49,10 @@
         font-family: Raleway;
         border: 1px solid #aaaaaa;
     }
-
-        /* Mark input boxes that gets an error on validation: */
-        input.invalid {
-            background-color: #ffdddd;
-        }
-
+    /* Mark input boxes that gets an error on validation: */
+    input.invalid {
+        background-color: #ffdddd;
+    }
     /* Hide all steps by default: */
     .tab {
         display: none;
@@ -77,7 +75,6 @@
     #prevBtn {
         background-color: #bbbbbb;
     }
-
     /* Make circles that indicate the steps of the form: */
     .step {
         height: 15px;
@@ -93,7 +90,6 @@
         .step.active {
             opacity: 1;
         }
-
         /* Mark the steps that are finished and valid: */
         .step.finish {
             background-color: #4CAF50;
@@ -119,16 +115,16 @@
             <p>@Html.EditorFor(model => model.thongtinkhaibao.HoTenTre, new { htmlAttributes = new { @class = "form-control", placeholder = "Họ tên trẻ..." } })</p>
             <p>@Html.EditorFor(model => model.thongtinkhaibao.Tuoi, new { htmlAttributes = new { @class = "form-control", placeholder = "Độ tuổi của trẻ..." } })</p>
             <p>@Html.EditorFor(model => model.thongtinkhaibao.DiaChiTre, new { htmlAttributes = new { @class = "form-control", placeholder = "Địa chỉ..." } })</p>
-            
+
             @Html.DropDownListFor(m => m.thongtinkhaibao.GioiTinh, new List<SelectListItem>
                    { new SelectListItem{Text="Nam", Value="Nam"},
                      new SelectListItem{Text="Nữ", Value="Nữ"}}, "Chọn giới tính")
-           </div>
+        </div>
         <div class="tab">
             Tổ chức bảo trợ:
 
             <p>
-                @Html.DropDownListFor(model => model.thongtinkhaibao.ToChucTrinhBao, (IEnumerable<SelectListItem>)ViewBag.tochuc)
+                @Html.DropDownListFor(model => model.thongtinkhaibao.ToChucTrinhBao, (IEnumerable<SelectListItem>)ViewData["ToChuc"])
             </p>
             <p>@Html.EditorFor(model => model.thongtinkhaibao.ThongTinThem, new { htmlAttributes = new { @class = "form-control", placeholder = "Thông tin thêm..." } })</p>
         </div>
@@ -186,7 +182,7 @@
             $(function () {
                 Swal.fire({
                     title: 'Cảm ơn bạn đã cung cấp thông tin cho chúng tôi',
-                    
+
                 });
             });
         </script>
@@ -201,13 +197,10 @@
                     html: content,
                     icon: 'warning'
                 });
-
-
     </script>
     <script>
         var currentTab = 0; // Current tab is set to be the first tab (0)
         showTab(currentTab); // Display the current tab
-
         function showTab(n) {
           // This function will display the specified tab of the form...
           var x = document.getElementsByClassName("tab");
@@ -226,7 +219,6 @@
           //... and run a function that will display the correct step indicator:
           fixStepIndicator(n)
         }
-
         function nextPrev(n) {
           // This function will figure out which tab to display
           var x = document.getElementsByClassName("tab");
@@ -239,12 +231,11 @@
           // if you have reached the end of the form...
           if (currentTab >= x.length) {
             // ... the form gets submitted:
-              document.getElementById("InfoForm").submit(); 
+              document.getElementById("InfoForm").submit();
           }
           // Otherwise, display the correct tab:
           showTab(currentTab);
         }
-
         function validateForm() {
           // This function deals with validation of the form fields
           var x, y, i, valid = true;
@@ -266,7 +257,6 @@
           }
           return valid; // return the valid status
         }
-
         function fixStepIndicator(n) {
           // This function removes the "active" class of all steps...
           var i, x = document.getElementsByClassName("step");
