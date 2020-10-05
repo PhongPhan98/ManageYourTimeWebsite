@@ -74,6 +74,9 @@ namespace MyWebSite.Controllers
             
         }
 
+        public ActionResult QuanLyThongTin() {
+            return View();
+        }
 
     }
 }

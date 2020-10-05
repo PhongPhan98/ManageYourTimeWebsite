@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewBag.Title = "QuanLyThongTin";
+    Layout = "~/Views/Layout/_LayoutAminPage.cshtml";
+}
+<script src="~/scripts/bootstrap.js"></script>
+<script src="~/scripts/jquery-3.0.0.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/Content/js/QuanLyThongTin.js"></script>
+
+<div class="container">
+    <h2>Quản lý thông tin được khai báo</h2>
+    <table class="table table-bordered table-hover" >
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Người khai báo</th>
+                <th>Địa chỉ</th>
+                <th>Nội dung</th>
+                <th>Họ tên trẻ</th>
+                <th>Địa chỉ</th>
+                <th>Giới tính</th>
+                <th>Tuổi</th>
+                <th>Tổ chức khai báo</th>
+                <th>Số điện thoại</th>
+                <th>Thông tin thêm</th>
+                <th>Trạng thái</th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+
+        </tbody>
+
+    </table>
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="Id">ID</label>
+                        <input type="text" class="form-control" id="Id" placeholder="Id" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label for="NguoiKhaiBao">Người khai báo</label>
+                        <input type="text" class="form-control" id="NguoiKhaiBao" placeholder="Người khai báo" />
+                    </div>
+                    <div class="form-group">
+                        <label for="DiaChi">Địa chỉ</label>
+                        <input type="text" class="form-control" id="DiaChi" placeholder="Địa chỉ" />
+                    </div>
+                    <div class="form-group">
+                        <label for="NoiDung">Nội dung</label>
+                        <input type="text" class="form-control" id="NoiDung" placeholder="Nội dung" />
+                    </div>
+                    <div class="form-group">
+                        <label for="HoTenTre">Họ tên trẻ</label>
+                        <input type="text" class="form-control" id="HoTenTre" placeholder="Họ tên trẻ" />
+                    </div>
+                    <div class="form-group">
+                        <label for="HoTenTre">Họ tên trẻ</label>
+                        <input type="text" class="form-control" id="HoTenTre" placeholder="Họ tên trẻ" />
+                    </div>
+                    <div class="form-group">
+                        <label for="DiaChi">Địa chỉ</label>
+                        <input type="text" class="form-control" id="DiaChi" placeholder="Địa chỉ" />
+                    </div>
+                    <div class="form-group">
+                        <label for="GioiTinh">Giới tính</label>
+                        <input type="text" class="form-control" id="GioiTinh" placeholder="Giới tính" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Tuoi">Tuổi</label>
+                        <input type="text" class="form-control" id="Tuoi" placeholder="Tuổi" />
+                    </div>
+                    <div class="form-group">
+                        <label for="HoTenTre">Họ tên trẻ</label>
+                        <input type="text" class="form-control" id="HoTenTre" placeholder="Họ tên trẻ" />
+                    </div>
+                    <div class="form-group">
+                        <label for="HoTenTre">Họ tên trẻ</label>
+                        <input type="text" class="form-control" id="HoTenTre" placeholder="Họ tên trẻ" />
+                    </div>
+                    <div class="form-group">
+                        <label for="ToChucKhaiBao">Tổ chức khai báo</label>
+                        <input type="text" class="form-control" id="ToChucKhaiBao" placeholder="Tổ chức khai báo" />
+                    </div>
+                    <div class="form-group">
+                        <label for="sdt">Số điện thoại</label>
+                        <input type="text" class="form-control" id="sdt" placeholder="Số điện thoại" />
+                    </div>
+                    <div class="form-group">
+                        <label for="ThongTinThem">Thông tin thêm</label>
+                        <input type="text" class="form-control" id="ThongTinThem" placeholder="Thông tin thêm" />
+                    </div>
+                    <div class="form-group">
+                        <label for="TrangThai">Trạng thái</label>
+                        <input type="text" class="form-control" id="TrangThai" placeholder="Trạng thái" />
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Add</button>
+                <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

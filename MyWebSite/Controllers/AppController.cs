@@ -59,19 +59,14 @@ namespace MyWebSite.Controllers
                 }
                 catch (Exception ex)
                 {
-                    ViewBag.error = "Lỗi hệ thống, vui lòng liên hệ quản trị";
-                    IEnumerable<SelectListItem> tochuc = db.ToChucHoTroes.Select(
-                                b => new SelectListItem { Value = b.TenToChuc, Text = b.TenToChuc });
-                    ViewData["ToChuc"] = tochuc;
-                    return View(model);
+                    ViewBag.error = "Lỗi hệ thống, vui lòng liên hệ quản trị";              
+                    return View();
                 }
             }
             else
             {
-                IEnumerable<SelectListItem> tochuc = db.ToChucHoTroes.Select(
-                                b => new SelectListItem { Value = b.TenToChuc, Text = b.TenToChuc });
-                ViewData["ToChuc"] = tochuc;
-                return View(model);
+                ViewBag.error = "Lỗi hệ thống, vui lòng liên hệ quản trị";
+                return View();
             }
 
              
