@@ -48,7 +48,8 @@ namespace MyWebSite.Controllers
             if (ModelState.IsValid)
             {
                 try
-                {
+                {      
+                    model.thongtinkhaibao.TrangThai = "Chưa duyệt";
                     db.ThongTinKhaiBaos.Add(model.thongtinkhaibao);
                     db.SaveChanges();
                     ModelState.Clear();

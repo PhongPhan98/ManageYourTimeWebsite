@@ -74,8 +74,10 @@ namespace MyWebSite.Controllers
             
         }
 
+        [NoDirectAccess]
         public ActionResult QuanLyThongTin() {
-            return View();
+            var data = db.ThongTinKhaiBaos.ToList();
+            return View(data);
         }
 
     }
