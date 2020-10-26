@@ -46,7 +46,7 @@
                                 <td>@item.SoDienThoai</td>
                                 <td>@item.ThongTinThem</td>
                                 <td>@item.TrangThai</td> 
-                                <td><input type="button" value="Duyệt" style="color: blue"/></td>
+                                <td><input type="button" id ="duyet" value="Duyệt" style="color: blue" onclick="duyet()"/></td>
                             </tr>
                         }
                         else
@@ -64,7 +64,7 @@
                                 <td>@item.SoDienThoai</td>
                                 <td>@item.ThongTinThem</td>
                                 <td>@item.TrangThai</td>
-                                <td><input type="button" value="Xóa" style="color: red"/></td>
+                                <td><input type="button" id="xoa" value="Xóa" style="color: red" onclick="xoa()"/></td>
                             </tr>
                         }
 
@@ -72,3 +72,13 @@
 
     </table>
 </div>
+
+<script>
+    function xoa() {
+        alert("Đã xóa thành công");
+    }
+
+    function duyet() {
+        alert("Đã duyệt thành công");
+    }
+</script>

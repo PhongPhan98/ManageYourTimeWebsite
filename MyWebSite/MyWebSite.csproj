@@ -191,6 +191,7 @@
     </EntityDeploy>
     <Content Include="Models\MyDB.edmx.diagram">
       <DependentUpon>MyDB.edmx</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\fontawesome-webfont.woff2" />

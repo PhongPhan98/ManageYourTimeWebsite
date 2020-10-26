@@ -20,11 +20,19 @@ namespace MyWebSite.Controllers
 
         [HttpPost]
         public ActionResult Registration(Reg model)
-        {   
-            db.Regs.Add(model);
-            db.SaveChanges();
-            Session["User"] = model.UserName;
-            return RedirectToAction("Login", "user");
+        {
+            if (db.Regs.Any(e => e.UserName == model.UserName))
+            {
+                ViewBag.Error = "Đã tồn tại tên đăng nhập này";
+                return RedirectToAction("Registration", "user");
+            }
+            else {
+                db.Regs.Add(model);
+                db.SaveChanges();
+                Session["User"] = model.UserName;
+                return RedirectToAction("Login", "user");
+            }
+            
         }
 
         public ActionResult Login()
