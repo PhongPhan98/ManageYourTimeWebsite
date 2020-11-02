@@ -46,7 +46,7 @@
                                 <td>@item.SoDienThoai</td>
                                 <td>@item.ThongTinThem</td>
                                 <td>@item.TrangThai</td> 
-                                <td><input type="button" id ="duyet" value="Duyệt" style="color: blue" onclick="duyet()"/></td>
+                                <td><input type="button" data-id="@item.Id" id ="duyet" value="Duyệt" style="color: blue" onclick="duyet()"/></td>
                             </tr>
                         }
                         else
@@ -64,10 +64,9 @@
                                 <td>@item.SoDienThoai</td>
                                 <td>@item.ThongTinThem</td>
                                 <td>@item.TrangThai</td>
-                                <td><input type="button" id="xoa" value="Xóa" style="color: red" onclick="xoa()"/></td>
+                                <td><input type="button" data-id="@item.Id" id="xoa" value="Xóa" style="color: red" onclick="xoa()"/></td>
                             </tr>
                         }
-
                     }
 
     </table>
@@ -75,7 +74,20 @@
 
 <script>
     function xoa() {
-        alert("Đã xóa thành công");
+        var tr = $(this).closest('tr');
+        tr.remove();
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("deleteInformation")',
+            data: { id: '' },
+            dataType: 'json',
+            success: function (response) {
+                console.log(response.d)
+            },
+            failure: function(response) {
+                alert("Lỗi hệ thống vui lòng liên hệ quản trị");
+            }
+        })
     }
 
     function duyet() {

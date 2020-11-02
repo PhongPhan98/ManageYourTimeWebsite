@@ -80,5 +80,27 @@ namespace MyWebSite.Controllers
             return View(data);
         }
 
+
+
+        #region admin function
+
+        [NoDirectAccess]
+        public ActionResult deleteInformation(int id)
+        {
+            try
+            {
+                var record = db.ThongTinKhaiBaos.Where(e => e.Id == id);
+                db.ThongTinKhaiBaos.RemoveRange(record);
+                return View();
+            }
+            catch (Exception ex)
+            {
+                ViewBag.error = "Xóa thất bại";
+                return View();
+            }
+        }
+        #endregion
+
+
     }
 }
