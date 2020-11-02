@@ -34,7 +34,7 @@
                         if (item.TrangThai !=  null && item.TrangThai.Trim() == "Chưa duyệt")
                         {
                             <tr style="color: red">
-                                <td>@item.Id</td>
+                                <td><span>@item.Id</span></td>
                                 <td>@item.HoTenNguoiKhaiBao</td>
                                 <td>@item.DiaChiNguoiKhaiBao</td>
                                 <td>@item.NoiDungKhaiBao</td>
@@ -52,7 +52,7 @@
                         else
                         {
                             <tr style="color:blue">
-                                <td>@item.Id</td>
+                                <td><span>@item.Id</span></td>
                                 <td>@item.HoTenNguoiKhaiBao</td>
                                 <td>@item.DiaChiNguoiKhaiBao</td>
                                 <td>@item.NoiDungKhaiBao</td>
@@ -74,12 +74,15 @@
 
 <script>
     function xoa() {
-        var tr = $(this).closest('tr');
+        var row = $(this).closest('tr');
+
+        var id = row.find("span").html();
+
         tr.remove();
         $.ajax({
             type: 'POST',
-            url: '@Url.Action("deleteInformation")',
-            data: { id: '' },
+            url: "/Admin/deleteInformation",
+            data: '{id: ' + id + '}',
             dataType: 'json',
             success: function (response) {
                 console.log(response.d)

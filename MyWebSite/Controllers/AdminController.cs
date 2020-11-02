@@ -80,8 +80,6 @@ namespace MyWebSite.Controllers
             return View(data);
         }
 
-
-
         #region admin function
 
         [NoDirectAccess]
@@ -89,8 +87,12 @@ namespace MyWebSite.Controllers
         {
             try
             {
-                var record = db.ThongTinKhaiBaos.Where(e => e.Id == id);
-                db.ThongTinKhaiBaos.RemoveRange(record);
+
+                ThongTinKhaiBao info = (from e in db.ThongTinKhaiBaos
+                                        where e.Id == id
+                                        select e
+                                        ).FirstOrDefault();
+                db.ThongTinKhaiBaos.Remove(info);
                 return View();
             }
             catch (Exception ex)
